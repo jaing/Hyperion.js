@@ -1,4 +1,5 @@
-define(['jquery', 'backbone', 'text!views/Global/tpl/error.tpl'], function($, Backbone, tpl) {
+define(['jquery', 'backbone', 'text!views/Global/tpl/error.tpl'], function ($, Backbone, tpl) {
+    'use strict';
 
     return Backbone.View.extend({
 
@@ -6,13 +7,12 @@ define(['jquery', 'backbone', 'text!views/Global/tpl/error.tpl'], function($, Ba
 
         },
 
-        initialize: function(options) {
+        initialize: function (options) {
             this.options = options;
-            this.render(tpl)
+            this.render(tpl);
         },
 
-        render: function(template) {
-            console.log(this.options);
+        render: function (template) {
             this.$el.html(_.template(template, this.getData())).translate();
         },
 

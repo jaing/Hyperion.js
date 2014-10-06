@@ -1,4 +1,5 @@
-define(['jquery', 'backbone', 'text!views/Global/tpl/header.tpl'], function($, Backbone, tpl) {
+define(['jquery', 'backbone', 'text!views/Global/tpl/header.tpl'], function ($, Backbone, tpl) {
+    'use strict';
 
     return Backbone.View.extend({
 
@@ -6,26 +7,25 @@ define(['jquery', 'backbone', 'text!views/Global/tpl/header.tpl'], function($, B
             'click #select-language a': 'changeLanguage'
         },
 
-        initialize: function(options) {
-	        this.options = options;
-            this.render(tpl)
+        initialize: function (options) {
+            this.options = options;
+            this.render(tpl);
         },
 
-        render: function(template) {
+        render: function (template) {
             this.$el.html(_.template(template, this.getData())).translate();
         },
 
         getData: function () {
             return {
-	            options: this.options
+                options: this.options
             };
         },
 
         changeLanguage: function (e) {
             e.preventDefault();
-            var lang = $(e.currentTarget).data('lang');
-            Hyperion.language = lang;
-            Hyperion.app.ajax('json/' + Hyperion.language + '.json',{},function(data){
+            Hyperion.language = $(e.currentTarget).data('lang');
+            Hyperion.app.ajax('json/' + Hyperion.language + '.json', {}, function (data) {
                 Hyperion._translations[Hyperion.language] = data;
                 $('body').translate();
             });
