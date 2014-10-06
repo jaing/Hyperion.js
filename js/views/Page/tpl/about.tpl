@@ -6,8 +6,7 @@
             <div class="thumbnail">
                 <div class="caption">
                     <h3>Kamil Thomas</h3>
-                    <p>Passion in web development. Over 8 years of commercial experience as front end developer. Creating new web applications to automate activation process. Conducting trainings about Front End technologies and good practices.</p>
-                    <p>Enhancing and optimizing performance and usability of existing solutions. Create and participate in software planning and estimating. Software design, prototyping and investigating</p>
+                    <p>Whole life interested in web development and web applications. Over 8 years of commercial experience as front end/mobile developer. So far I have an experience in web and mobile product development. Product maintenance. Enhancing and optimizing performance and usability of existing solutions. Planning and estimating (Agile/Scrum). Investigating and prototyping. Leading and coaching junior staff. Conducting trainings about Front End technologies and good practices.</p>
                     <h5>Technologies</h5>
                     <p>
                         <span class="label label-success">HTML5</span>
@@ -31,6 +30,8 @@
                         <span class="label label-success">Team Lead</span>
                         <span class="label label-success">RequireJS</span>
                         <span class="label label-success">Google API</span>
+                        <span class="label label-success">Scrum</span>
+                        <span class="label label-success">Agile</span>
                     </p>
                     <p>
                         <a href="https://www.linkedin.com/profile/view?id=220191916" target="_blank" class="btn btn-primary" role="button"><i class="fa fa-linkedin"></i></a>
