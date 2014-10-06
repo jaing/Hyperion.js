@@ -1,4 +1,5 @@
-define(['jquery', 'backbone', 'text!./tpl/main.tpl', 'vendor/language/javascript', 'vendor/language/html'], function ($, Backbone, tpl) {
+define(['jquery', 'backbone', 'text!./tpl/main.tpl', 'rainbow', 'vendor/language/javascript', 'vendor/language/html'], function ($, Backbone, tpl, Rainbow) {
+    'use strict';
 
     return Backbone.View.extend({
 

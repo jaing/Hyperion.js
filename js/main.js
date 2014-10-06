@@ -17,14 +17,15 @@ require.config({
         underscore: 'vendor/underscore',
         backbone: 'vendor/backbone',
         text: 'vendor/text',
-        bootstrap: 'vendor/bootstrap'
+        bootstrap: 'vendor/bootstrap',
+        rainbow: 'vendor/rainbow'
     },
     shim: {
         'bootstrap': {
             'deps': ['jquery']
         },
         'backbone': {
-            'deps': ['underscore', 'jquery','text','bootstrap']
+            'deps': ['underscore', 'jquery', 'text', 'bootstrap']
         },
         'vendor/language/javascript': {
             'deps': ['vendor/language/generic']
@@ -33,7 +34,10 @@ require.config({
             'deps': ['vendor/language/generic']
         },
         'vendor/language/generic': {
-            'deps': ['vendor/rainbow']
+            'deps': ['rainbow']
+        },
+        'rainbow': {
+            'exports': 'Rainbow'
         }
     }
 });
@@ -43,7 +47,8 @@ require.config({
  * 1. Loading default language file.
  * 2. Loading application.
  */
-require(['routers/Router', 'plugins'], function(Router) {
+require(['routers/Router', 'backbone', 'jquery', 'plugins'], function (Router, Backbone, $) {
+    'use strict';
     $.ajax({
         url: 'json/' + Hyperion.language + '.json',
         type: 'GET'
