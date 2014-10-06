@@ -1,0 +1,121 @@
+@import "reset";
+@import "variable";
+@import "bootstrap";
+@import "animations";
+@import "font-awesome";
+@import "syntax";
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// Common classes
+
+.e-m {
+    margin: 2em 0;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+// Loading component
+
+#loading {
+    background: rgba(0, 0, 0, 0.20);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    .spinner {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: #333;
+        margin: -15px 0 0 -15px;
+        -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+        animation: rotateplane 1.2s infinite ease-in-out;
+    }
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    padding: 0;
+    background: url("../images/bg.jpg") fixed;
+    background-size: cover;
+}
+
+#app-container {
+    padding-top: 45px;
+}
+
+#toJsonResultContainer {
+    position: fixed;
+    right: 10px;
+    top: 55px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.98);
+    padding-bottom: 2em;
+}
+
+.container.v-s {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.list-group {
+    h4 {
+        font-weight: bold;
+    }
+}
+
+#examples-nav {
+    a {
+        display: block;
+        margin: 1em 0;
+        font-size: .9em;
+    }
+    ul {
+        padding-left: .5em;
+    }
+    .li-label {
+        font-weight: bold;
+        margin: 1em 0;
+    }
+}

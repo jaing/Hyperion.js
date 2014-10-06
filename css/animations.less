@@ -1,0 +1,165 @@
+.slideLeft{
+    animation-name: slideLeft;
+    -webkit-animation-name: slideLeft;
+
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+    visibility: visible !important;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideLeft {
+    0% {
+        -webkit-transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.slideTop{
+    animation-name: slideTop;
+    -webkit-animation-name: slideTop;
+
+    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.4s;
+
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+
+    visibility: visible !important;
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideTop {
+    0% {
+        -webkit-transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flipInY {
+    0% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+    }
+
+    60% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+    }
+}
+
+@keyframes flipInY {
+    0% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        -webkit-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+    }
+
+    60% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+    }
+}
+
+.flipInY {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInY;
+    animation-name: flipInY;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    } 50% {
+          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+      } 100% {
+            transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+            -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        }
+}
