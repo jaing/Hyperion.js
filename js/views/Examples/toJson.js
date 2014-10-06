@@ -1,16 +1,17 @@
-define(['jquery', 'backbone', 'text!./tpl/toJson.tpl', 'vendor/language/javascript'], function($, Backbone, tpl) {
+define(['jquery', 'backbone', 'text!./tpl/toJson.tpl', 'rainbow', 'vendor/language/javascript'], function ($, Backbone, tpl, Rainbow) {
+    'use strict';
 
     return Backbone.View.extend({
 
         events: {
-            'submit #sample-form' : 'handleSubmit'
+            'submit #sample-form': 'handleSubmit'
         },
 
-        initialize: function() {
-            this.render(tpl)
+        initialize: function () {
+            this.render(tpl);
         },
 
-        render: function(template) {
+        render: function (template) {
             this.$el.html(_.template(template, this.getData())).translate();
         },
 
@@ -18,10 +19,10 @@ define(['jquery', 'backbone', 'text!./tpl/toJson.tpl', 'vendor/language/javascri
             return {};
         },
 
-        handleSubmit: function(e) {
+        handleSubmit: function (e) {
             e.preventDefault();
             var me = this;
-            Rainbow.color(JSON.stringify($(e.currentTarget).toJSON(), null, 2), 'javascript', function(highlightedCode) {
+            Rainbow.color(JSON.stringify($(e.currentTarget).toJSON(), null, 2), 'javascript', function (highlightedCode) {
                 me.$el.find('#toJsonResult').html(highlightedCode);
             });
         }

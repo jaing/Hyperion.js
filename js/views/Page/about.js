@@ -1,6 +1,7 @@
 define(['jquery', 'backbone',
     'text!views/Page/tpl/about.tpl'
-], function($, Backbone, tpl) {
+    ], function ($, Backbone, tpl) {
+    'use strict';
 
     return Backbone.View.extend({
 
@@ -8,11 +9,11 @@ define(['jquery', 'backbone',
 
         },
 
-        initialize: function() {
-            this.render(tpl)
+        initialize: function () {
+            this.render(tpl);
         },
 
-        render: function(template) {
+        render: function (template) {
             this.$el.html(_.template(template, this.getData())).translate();
         },
 
