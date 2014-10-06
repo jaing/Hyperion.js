@@ -1,0 +1,12 @@
+{
+    "name": "Hyperion",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:jaing/Hyperion.js.git"
+    },
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-jslint": "latest"
+    }
+}
