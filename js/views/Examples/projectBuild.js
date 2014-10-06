@@ -1,6 +1,12 @@
-define(['jquery', 'backbone',
-    'text!views/Page/tpl/about.tpl'
-    ], function ($, Backbone, tpl) {
+define([
+    'jquery',
+    'backbone',
+    'text!./tpl/projectBuild.tpl',
+    'rainbow',
+    'vendor/language/javascript',
+    'vendor/language/html'
+], function ($, Backbone, tpl, Rainbow) {
+
     'use strict';
 
     return Backbone.View.extend({
@@ -9,20 +15,17 @@ define(['jquery', 'backbone',
 
         },
 
-        initialize: function () {
+        initialize: function (options) {
             this.render(tpl);
         },
 
         render: function (template) {
             this.$el.html(_.template(template, this.getData())).translate();
+            Rainbow.color();
         },
 
         getData: function () {
-            var a = new Date();
-            a = a.getDate();
-            return {
-                no: a
-            };
+            return {};
         }
     });
 });
