@@ -1,0 +1,41 @@
+@bg-color: #fff;
+@body-color: #666;
+@href-color: #1f4a62;
+@default-padding: .6em;
+
+@c1: #E5CA5F;
+
+@header-navigation-bg: #1f4a62;
+@header-navigation-color: lighten(@header-navigation-bg, 40%);
+@header-navigation-border: 1px solid darken(@header-navigation-bg, 10%);
+@header-navigation-shadow: 0 0 2px 2px darken(@header-navigation-bg, 20%);
+@header-navigation-link: lighten(@header-navigation-bg, 60%);
+@header-navigation-link-border: 1px solid darken(@header-navigation-bg, 2%);
+@header-navigation-link-border-second: 1px solid lighten(@header-navigation-bg, 2%);
+
+.transition() {
+    -webkit-transition: .5s all ease;
+    -moz-transition: .5s all ease;
+    -ms-transition: .5s all ease;
+    -o-transition: .5s all ease;
+    transition: .5s all ease;
+}
+
+.rotate(@deg) {
+    -webkit-transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    -ms-transform: rotate(@deg);
+    -o-transform: rotate(@deg);
+    transform: rotate(@deg);
+}
+
+.gradient(@col) {
+    background: @col;
+    background: -moz-linear-gradient(45deg,  @col 0%, lighten(@col,10%) 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,@col), color-stop(100%,lighten(@col,10%)));
+    background: -webkit-linear-gradient(45deg,  @col 0%,lighten(@col,10%) 100%);
+    background: -o-linear-gradient(45deg,  @col 0%,lighten(@col,10%) 100%);
+    background: -ms-linear-gradient(45deg,  @col 0%,lighten(@col,10%) 100%);
+    background: linear-gradient(45deg,  @col 0%,lighten(@col,10%) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@col', endColorstr='lighten(@col,10%)',GradientType=1 );
+}
