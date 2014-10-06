@@ -1,3 +1,4 @@
+/*global module*/
 module.exports = function (grunt) {
     'use strict';
 
@@ -73,7 +74,5 @@ module.exports = function (grunt) {
 
     grunt.initConfig(config);
 
-    grunt.loadNpmTasks('grunt-contrib-requirejs');
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-jslint');
+    require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };
