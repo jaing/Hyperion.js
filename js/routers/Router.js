@@ -1,18 +1,19 @@
-define(['jquery', 'backbone','views/Global/application'], function($, Backbone, ApplicationView) {
-
+define(['jquery', 'backbone', 'views/Global/application'], function ($, Backbone, ApplicationView) {
+    'use strict';
 
     return Backbone.Router.extend({
 
         routes: {
-            '' : 'displayStartPage',
-            'page/:page(/):action(/)(:id)' : 'displayPage'
+            '': 'displayStartPage',
+            'page/:page(/):action(/)(:id)': 'displayPage'
         },
-        initialize: function() {
+
+        initialize: function () {
             this.loadApplication();
         },
 
-        loadApplication: function() {
-            
+        loadApplication: function () {
+
             // Translating all labels
             $('body').translate();
 
@@ -30,7 +31,7 @@ define(['jquery', 'backbone','views/Global/application'], function($, Backbone, 
          * @param  {string} action default = main
          * @param  {int} id        passing id if needed
          */
-        displayPage: function(page, action, id) {
+        displayPage: function (page, action, id) {
             var me = this;
 
             action = action || 'main';
@@ -54,23 +55,23 @@ define(['jquery', 'backbone','views/Global/application'], function($, Backbone, 
             /**
              * Loading requested view file and passing options if needed.
              */
-            require(['views/' + page + '/' + action], function(View) {
+            require(['views/' + page + '/' + action], function (View) {
                 var viewOptions = {
                     el: '#page-' + page + action
                 };
                 if (id) {
                     _.extend(viewOptions, {
                         id: id
-                    })
+                    });
                 }
                 Hyperion.app.loading(false);
                 Hyperion.views[page] = new View(viewOptions);
-            }, function(err) {
-                me.displayPage('Global','error',err);
+            }, function (err) {
+                me.displayPage('Global', 'error', err);
             });
         },
 
-        displayStartPage: function() {
+        displayStartPage: function () {
             Backbone.history.navigate('page/Page/main', {
                 replace: true,
                 trigger: true

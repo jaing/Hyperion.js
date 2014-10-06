@@ -13,7 +13,6 @@ module.exports = function (grunt) {
                     browser: true,
                     nomen: true,
                     vars: true,
-                    todo: true,
                     unparam: true,
                     predef: ['Hyperion', 'require', 'define', '_']
                 }

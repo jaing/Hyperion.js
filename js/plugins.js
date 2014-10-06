@@ -1,4 +1,5 @@
-define(['jquery', 'dateFormat', 'backbone'], function($, DateFormat) {
+define(['jquery', 'dateFormat', 'backbone'], function ($, DateFormat) {
+    'use strict';
 
     _.templateSettings = {
         evaluate: /\{\{(.+?)\}\}/g,
@@ -8,13 +9,13 @@ define(['jquery', 'dateFormat', 'backbone'], function($, DateFormat) {
 
     var bodyHtml = $('body,html');
 
-    var translateElement = function(element) {
-        var dateFormat = element.data('date-format');
-        var translate = function(key) {
-            if(dateFormat){
+    var translateElement = function (element) {
+        var dateFormat = element.data('date-format'), translation;
+        var translate = function (key) {
+            if (dateFormat) {
                 translation = DateFormat.format(DateFormat.parse(element.data('translate')), { format: dateFormat });
             } else {
-                var args = key.split('|'), translation;
+                var args = key.split('|');
                 key = args.shift();
                 translation = Hyperion._translations[Hyperion.language][key] || key;
                 while (args.length) {
@@ -24,11 +25,11 @@ define(['jquery', 'dateFormat', 'backbone'], function($, DateFormat) {
             return translation;
         };
 
-        var translation = translate(element.data('translate'));
+        translation = translate(element.data('translate'));
 
         if (element.is('input')) {
             element.attr('placeholder', translation);
-        } else if(element.is('optgroup')) {
+        } else if (element.is('optgroup')) {
             element.attr('label', translation);
         } else {
             element.html(translation);
@@ -36,22 +37,22 @@ define(['jquery', 'dateFormat', 'backbone'], function($, DateFormat) {
     };
 
     $.fn.extend({
-        translate: function() {
+        translate: function () {
             var toTranslate = this.find('[data-translate]').not('.do-not-translate');
             if (toTranslate.length === 0 && this.data('translate')) {
                 translateElement(this);
             } else {
-                $.each(toTranslate, function() {
+                $.each(toTranslate, function () {
                     translateElement($(this));
                 });
             }
 
             return this;
         },
-        toJSON: function(attr) {
+        toJSON: function (attr) {
             attr = attr || 'name';
             var elements = this.find('input, select, textarea'), json = {};
-            $.each(elements, function() {
+            $.each(elements, function () {
                 var tmp = $(this);
                 if ((!tmp.is(':disabled') && tmp.attr(attr) && !tmp.is(':radio') && !tmp.is(':checkbox')) || (tmp.is(':radio') && tmp.is(':checked')) || (tmp.is(':checkbox') && tmp.is(':checked'))) {
                     json[tmp.attr(attr)] = tmp.val();
@@ -59,12 +60,12 @@ define(['jquery', 'dateFormat', 'backbone'], function($, DateFormat) {
             });
             return json;
         },
-        onAvailable: function(fn) {
+        onAvailable: function (fn) {
             var selector = this.selector, element = $(selector), timer;
             if (this.length > 0) {
                 fn.call(this, element);
             } else {
-                timer = setInterval(function() {
+                timer = setInterval(function () {
                     element = $(selector);
                     if (element.length > 0) {
                         fn.call(element, element);
@@ -73,13 +74,13 @@ define(['jquery', 'dateFormat', 'backbone'], function($, DateFormat) {
                 }, 150);
             }
         },
-        scrollTo: function(delay) {
+        scrollTo: function (delay) {
             delay = delay || 500;
             $(bodyHtml).animate({
                 scrollTop: this.offset().top
             }, delay, 'swing');
         },
-        are: function(selector) {
+        are: function (selector) {
             return !!selector && this.filter(selector).length === this.length;
         }
     });
