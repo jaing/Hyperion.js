@@ -35,6 +35,7 @@
                     <p>
                         <a href="https://www.linkedin.com/profile/view?id=220191916" target="_blank" class="btn btn-primary" role="button"><i class="fa fa-linkedin"></i></a>
                         <a href="mailto:kamil.thomas@hotmail.com" class="btn btn-danger" role="button"><i class="fa fa-envelope"></i></a>
+                        <a href="https://github.com/jaing" target="_blank" class="btn btn-info" role="button"><i class="fa fa-github"></i></a>
                     </p>
                 </div>
             </div>
