@@ -2,9 +2,10 @@ define([
     'jquery',
     'backbone',
     'text!./tpl/projectBuild.tpl',
+    'rainbow',
     'vendor/language/javascript',
     'vendor/language/html'
-], function ($, Backbone, tpl) {
+], function ($, Backbone, tpl, Rainbow) {
 
     'use strict';
 
