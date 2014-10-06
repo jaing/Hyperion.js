@@ -1,13 +1,14 @@
 {
     "label.EN": "English",
     "label.PL": "Polish",
+    "label.example": "Example",
     "label.menu.demo": "Demo examples",
     "label.language.select": "Select language",
     "label.menu.home": "Home",
     "label.menu.methods": "Methods",
     "label.menu.simpleView": "Simple view",
 	"label.menu.complexView": "Complex view",
-    "label.menu.jsonView": "Json view",
+    "label.menu.jsonView": "JSON view",
     "label.menu.multipleComponents": "Multiple components",
     "label.toJson": "$.toJson sample",
     "label.email": "Email",
@@ -53,6 +54,10 @@
     "label.simpleView.simpleView.text3": "For example when we enter:",
     "label.simpleView.simpleView.text4": "Application will look for <strong>simpleView</strong> inside <strong>Examples</strong> module. Let's see how this files looks like:",
 	"label.simpleView.simpleView.text5": "Result is this page. This is how fast you can create a simple view by adding only 2 files.",
+    "label.jsonView.howToCreateJsonView": "How to create a JSON view?",
+    "label.jsonView.text": "Now when we know how to create a simple view let me show how you can build one using JSON data. On initialization application will do an ajax call to get the data. After that we will trigger rendering an underscoreJS template with this data.",
+    "label.jsonView.text2": "In this example we will use some methods inside template file. UnderscoreJS allows us to use JavaScript inside the templates. Normally Underscore use <strong><% %></strong> as a tag for code. We decided to change it to mustaches <strong>{}</strong>.",
+    "label.jsonView.text3": "JSON file contains some user data. Using it we will build a table that will display every user in separate row.",
     "label.about.whoDidIt": "Who did it?",
     "label.examples.menu": "Menu"
 
