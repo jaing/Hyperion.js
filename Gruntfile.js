@@ -33,11 +33,27 @@ module.exports = function (grunt) {
                         underscore: 'vendor/underscore',
                         backbone: 'vendor/backbone',
                         text: 'vendor/text',
-                        bootstrap: 'vendor/bootstrap'
+                        bootstrap: 'vendor/bootstrap',
+                        rainbow: 'vendor/rainbow'
                     },
                     shim: {
+                        'bootstrap': {
+                            'deps': ['jquery']
+                        },
                         'backbone': {
                             'deps': ['underscore', 'jquery', 'text', 'bootstrap']
+                        },
+                        'vendor/language/javascript': {
+                            'deps': ['vendor/language/generic']
+                        },
+                        'vendor/language/html': {
+                            'deps': ['vendor/language/generic']
+                        },
+                        'vendor/language/generic': {
+                            'deps': ['rainbow']
+                        },
+                        'rainbow': {
+                            'exports': 'Rainbow'
                         }
                     },
                     include: [
