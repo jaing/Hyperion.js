@@ -16,5 +16,14 @@
 			'deps': ['underscore', 'jquery','text','bootstrap']
 		}
 	},
-	include: ['views/Global/header', 'views/Global/error', 'views/Test/json', 'views/Test/main', 'views/Test/products']
+	include: [
+        'views/Global/header',
+        'views/Global/error',
+        'views/Examples/jsonView',
+        'views/Examples/simpleView',
+        'views/Examples/main',
+        'views/Examples/toJson',
+        'views/Page/about',
+        'views/Page/main'
+    ]
 })
