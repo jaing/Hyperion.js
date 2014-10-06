@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         jslint: {
             client: {
                 src: ['js/**/*.js'],
-                exclude: ['js/vendor/**/*.js', 'js/build/**/*.js', 'js/r.js'],
+                exclude: ['js/vendor/**/*.js', 'js/build/**/*.js'],
                 directives: {
                     plusplus: true,
                     regexp: true,
