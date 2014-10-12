@@ -1,6 +1,4 @@
-define(['jquery', 'backbone',
-    'text!views/Page/tpl/index.tpl'
-    ], function ($, Backbone, tpl) {
+define(['jquery', 'backbone', 'underscore', 'text!views/Page/tpl/index.tpl'], function ($, Backbone, _, tpl) {
     'use strict';
 
     return Backbone.View.extend({

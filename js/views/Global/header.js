@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'text!views/Global/tpl/header.tpl'], function ($, Backbone, tpl) {
+define(['jquery', 'backbone', 'underscore', 'text!views/Global/tpl/header.tpl'], function ($, Backbone, _, tpl) {
     'use strict';
 
     return Backbone.View.extend({

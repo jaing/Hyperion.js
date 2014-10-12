@@ -39,7 +39,7 @@ module.exports = function (grunt) {
                     nomen: true,
                     vars: true,
                     unparam: true,
-                    predef: ['Hyperion', 'require', 'define', '_']
+                    predef: ['Hyperion', 'require', 'define']
                 }
             }
         },

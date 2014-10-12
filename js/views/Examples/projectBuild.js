@@ -1,11 +1,12 @@
 define([
     'jquery',
     'backbone',
+    'underscore',
     'text!./tpl/projectBuild.tpl',
     'rainbow',
     'vendor/language/javascript',
     'vendor/language/html'
-], function ($, Backbone, tpl, Rainbow) {
+], function ($, Backbone, _, tpl, Rainbow) {
 
     'use strict';
 
