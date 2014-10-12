@@ -1,4 +1,4 @@
-define(['jquery', 'dateFormat', 'backbone'], function ($, DateFormat) {
+define(['jquery', 'dateFormat', 'underscore'], function ($, DateFormat, _) {
     'use strict';
 
     _.templateSettings = {

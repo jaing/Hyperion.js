@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'views/Global/application'], function ($, Backbone, ApplicationView) {
+define(['jquery', 'backbone', 'underscore', 'views/Global/application'], function ($, Backbone, _, ApplicationView) {
     'use strict';
 
     return Backbone.Router.extend({

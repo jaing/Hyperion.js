@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'text!./tpl/main.tpl', 'rainbow', 'vendor/language/javascript', 'vendor/language/html'], function ($, Backbone, tpl, Rainbow) {
+define(['jquery', 'backbone', 'underscore', 'text!./tpl/main.tpl', 'rainbow', 'vendor/language/javascript', 'vendor/language/html'], function ($, Backbone, _, tpl, Rainbow) {
     'use strict';
 
     return Backbone.View.extend({
