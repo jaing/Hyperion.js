@@ -2,6 +2,27 @@
 module.exports = function (grunt) {
     'use strict';
 
+    var fs = require('fs');
+
+    var walk = function (dir, filter) {
+        var results = [];
+        var list = fs.readdirSync(dir);
+        list.forEach(function (file) {
+            file = dir + '/' + file;
+            var stat = fs.statSync(file);
+            if (stat && stat.isDirectory()) {
+                results = results.concat(walk(file, filter));
+            } else if (file.match(filter)) {
+                results.push(file);
+            }
+        });
+        return results;
+    };
+
+    var includes = walk('js/views', /.*\.js$/).map(function (fileName) {
+        return fileName.substr(3, fileName.length - 6);
+    });
+
     var config = {
         less: {
             main: {
@@ -81,16 +102,7 @@ module.exports = function (grunt) {
                             'exports': 'Rainbow'
                         }
                     },
-                    include: [
-                        'views/Global/header',
-                        'views/Global/error',
-                        'views/Examples/jsonView',
-                        'views/Examples/simpleView',
-                        'views/Examples/main',
-                        'views/Examples/toJson',
-                        'views/Page/about',
-                        'views/Page/main'
-                    ]
+                    include: includes
                 }
             }
         }
