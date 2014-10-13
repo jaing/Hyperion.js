@@ -9,6 +9,7 @@
     "label.menu.methods": "Methods",
     "label.menu.simpleView": "Simple view",
     "label.menu.complexView": "Complex view",
+    "label.menu.handlebars": "Handlebars templates",
     "label.menu.jsonView": "JSON view",
     "label.menu.multipleComponents": "Multiple components",
     "label.toJson": "$.toJson sample",
@@ -60,6 +61,7 @@
     "label.jsonView.text2": "In this example we will use some methods inside template file. UnderscoreJS allows us to use JavaScript inside the templates. Normally Underscore use <strong><% %></strong> as a tag for code. We decided to change it to mustaches <strong>{}</strong>.",
     "label.jsonView.text3": "JSON file contains some user data. Using it we will build a table that will display every user in separate row.",
     "label.about.whoDidIt": "Who did it?",
-    "label.examples.menu": "Menu"
+    "label.examples.menu": "Menu",
+    "label.hbs.text": "This example will show you how to use HandlebarsJS template system in our technology stack. Some of you may prefer working using them than Underscore templates."
 
 }

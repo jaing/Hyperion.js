@@ -22,6 +22,7 @@
                         <li><a href="#page/Examples/simpleView" data-translate="label.menu.simpleView"></a></li>
                         <!--<li><a href="#page/Examples/complexView" data-translate="label.menu.complexView"></a></li>-->
                         <li><a href="#page/Examples/jsonView" data-translate="label.menu.jsonView"></a></li>
+                        <li><a href="#page/Examples/handlebars" data-translate="label.menu.handlebars"></a></li>
                         <li><a href="#page/Examples/projectBuild" data-translate="label.menu.projectBuild"></a></li>
                         <!--<li><a href="#page/Examples/multipleComponents" data-translate="label.menu.multipleComponents"></a></li>-->
                     </ul>

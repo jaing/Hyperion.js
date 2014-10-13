@@ -1,0 +1,173 @@
+<div class="container">
+    <h1 data-translate="label.menu.handlebars"></h1>
+    <p data-translate="label.hbs.text"></p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>no.</th>
+            <th>name</th>
+            <th></th>
+            <th>balance</th>
+            <th>email</th>
+            <th>tags</th>
+        </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+                <tr>
+                    <td>{{@index}}</td>
+                    <td>{{name}}</td>
+                    <td>
+                        {{#if isActive}}
+                            <span class="label label-success">Active</span>
+                        {{/if}}
+                    </td>
+                    <td>{{balance}}</td>
+                    <td><a href="mailto:{{email}}">{{email}}</a></td>
+                    <td>
+                        {{#each tags}}
+                            <span class="label label-info">{{this}}</span>
+                        {{/each}}
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#hbs-js" role="tab" data-toggle="tab">JS</a></li>
+        <li><a href="#hbs-tpl" role="tab" data-toggle="tab">TPL</a></li>
+        <li><a href="#hbs-json" role="tab" data-toggle="tab">JSON</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active" id="hbs-js">
+            <pre><code data-language="javascript">
+define([
+    'jquery',
+    'backbone',
+    'handlebars',
+    'text!./tpl/jsonView.tpl'
+], function ($, Backbone, Handlebars, tpl) {
+
+    'use strict';
+
+    return Backbone.View.extend({
+
+        initialize: function (options) {
+            this.getData();
+        },
+
+        render: function (data) {
+            var template = Handlebars.compile(tpl);
+            this.$el.html(template(data)).translate();
+            Rainbow.color();
+        },
+
+        getData: function () {
+            var me = this;
+            Hyperion.app.ajax('json/Test_json.json', {}, function (data) {
+                me.render({
+                    users: data
+                });
+            });
+        }
+    });
+});
+            </code></pre>
+        </div>
+        <div class="tab-pane" id="hbs-tpl">
+            <pre><code data-language="html">
+&#60;table class="table"&#62;
+    &#60;thead&#62;
+    &#60;tr&#62;
+        &#60;th&#62;no.&#60;/th&#62;
+        &#60;th&#62;name&#60;/th&#62;
+        &#60;th&#62;&#60;/th&#62;
+        &#60;th&#62;balance&#60;/th&#62;
+        &#60;th&#62;email&#60;/th&#62;
+        &#60;th&#62;tags&#60;/th&#62;
+    &#60;/tr&#62;
+    &#60;/thead&#62;
+    &#60;tbody&#62;
+    &#123;&#123;#each users&#125;
+        &#60;tr&#62;
+            &#60;td&#62;&#123;&#123;@index&#125;&#60;/td&#62;
+            &#60;td&#62;&#123;&#123;name&#125;&#60;/td&#62;
+            &#60;td&#62;
+                &#123;&#123;#if isActive&#125;
+                    &#60;span class="label label-success"&#62;Active&#60;/span&#62;
+                &#123;&#123;/if&#125;
+            &#60;/td&#62;
+            &#60;td&#62;&#123;&#123;balance&#125;&#60;/td&#62;
+            &#60;td&#62;&#60;a href="mailto:&#123;&#123;email&#125;"&#62;&#123;&#123;email&#125;&#60;/a&#62;&#60;/td&#62;
+            &#60;td&#62;
+                &#123;&#123;#each tags&#125;
+                    &#60;span class="label label-info"&#62;&#123;&#123;this&#125;&#60;/span&#62;
+                &#123;&#123;/each&#125;
+            &#60;/td&#62;
+        &#60;/tr&#62;
+    &#123;&#123;/each&#125;
+    &#60;/tbody&#62;
+&#60;/table&#62;
+            </code></pre>
+        </div>
+        <div class="tab-pane" id="hbs-json">
+            <pre><code data-language="javascript">
+    {
+        "_id": "543273d3b5d2352d766d0205",
+        "index": 0,
+        "guid": "0472b03f-384b-4797-9582-07dd3342c8ee",
+        "isActive": false,
+        "balance": "$1,106.10",
+        "picture": "http://placehold.it/32x32",
+        "age": 23,
+        "eyeColor": "green",
+        "name": "Virginia Peck",
+        "gender": "female",
+        "company": "ACCEL",
+        "email": "virginiapeck@accel.com",
+        "phone": "+1 (857) 445-2075",
+        "address": "470 Louisiana Avenue, Chical, Alaska, 7663",
+        "about": "Nisi est ipsum Lorem officia et dolore et ea. Nisi officia aute ea et anim in. Labore labore culpa ex aute reprehenderit occaecat magna id dolor Lorem tempor excepteur tempor. Velit cillum quis ut aliqua minim eu enim et dolore exercitation ipsum mollit. Id enim eu dolor aliqua laborum nostrud esse.\r\n",
+        "registered": "2014-05-21T17:28:19 -02:00",
+        "latitude": 62.170086,
+        "longitude": 114.75104,
+        "tags": [
+            "anim",
+            "sint",
+            "velit",
+            "in",
+            "magna",
+            "consectetur",
+            "tempor"
+        ],
+        "friends": [
+            {
+                "id": 0,
+                "name": "Penny Puckett"
+            },
+            {
+                "id": 1,
+                "name": "Glenn Curtis"
+            },
+            {
+                "id": 2,
+                "name": "Amelia Washington"
+            }
+        ],
+        "greeting": "Hello, Virginia Peck! You have 8 unread messages.",
+        "favoriteFruit": "strawberry"
+    }
+    </code></pre>
+        </div>
+    </div>
+
+</div>
+
+<div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+        {{body}}
+    </div>
+</div>

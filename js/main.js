@@ -18,6 +18,7 @@ require.config({
         backbone: 'vendor/backbone',
         text: 'vendor/text',
         bootstrap: 'vendor/bootstrap',
+        handlebars: 'vendor/handlebars-v2.0.0',
         rainbow: 'vendor/rainbow'
     },
     shim: {
