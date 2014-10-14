@@ -41,6 +41,7 @@
     </table>
     <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#jsonView-js" role="tab" data-toggle="tab">JS</a></li>
+        <li><a href="#jsonView-js-bb" role="tab" data-toggle="tab">JS + Backbone Collection</a></li>
         <li><a href="#jsonView-tpl" role="tab" data-toggle="tab">TPL</a></li>
         <li><a href="#jsonView-json" role="tab" data-toggle="tab">JSON</a></li>
     </ul>
@@ -74,6 +75,52 @@ define([
             Hyperion.app.ajax('json/Test_json.json', {}, function (data) {
                 me.render({
                     users: data
+                });
+            });
+        }
+    });
+});
+            </code></pre>
+        </div>
+        <div class="tab-pane active" id="jsonView-js-bb">
+            <pre><code data-language="javascript">
+define([
+    'jquery',
+    'backbone',
+    'underscore',
+    'text!./tpl/jsonView.tpl'
+], function ($, Backbone, _, tpl, Rainbow) {
+
+    'use strict';
+
+    var UsersCollection = Backbone.Collection.extend();
+
+    return Backbone.View.extend({
+
+        events: {
+
+        },
+
+        initialize: function (options) {
+            this.collection = new UsersCollection();
+            this.getData();
+        },
+
+        render: function (data) {
+            this.$el.html(_.template(
+                tpl,
+                data
+            )).translate();
+        },
+
+        getData: function () {
+            var me = this;
+            Hyperion.app.ajax('json/Test_json.json', {}, function (data) {
+                $.each(data, function (index, val) {
+                    me.collection.add(val);
+                });
+                me.render({
+                    users: me.collection.toJSON()
                 });
             });
         }

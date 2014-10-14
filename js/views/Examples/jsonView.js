@@ -10,6 +10,8 @@ define([
 
     'use strict';
 
+    var UsersCollection = Backbone.Collection.extend();
+
     return Backbone.View.extend({
 
         events: {
@@ -17,6 +19,7 @@ define([
         },
 
         initialize: function (options) {
+            this.collection = new UsersCollection();
             this.getData();
         },
 
@@ -32,8 +35,11 @@ define([
         getData: function () {
             var me = this;
             Hyperion.app.ajax('json/Test_json.json', {}, function (data) {
+                $.each(data, function (index, val) {
+                    me.collection.add(val);
+                });
                 me.render({
-                    users: data
+                    users: me.collection.toJSON()
                 });
             });
         }
