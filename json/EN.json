@@ -3,6 +3,7 @@
     "label.PL": "Polish",
     "label.example": "Example",
     "label.menu.demo": "Demo examples",
+    "label.menu.newLanguage": "How to add need language",
     "label.language.select": "Select language",
     "label.menu.home": "Home",
     "label.menu.projectBuild": "How to build a project",
@@ -62,6 +63,10 @@
     "label.jsonView.text3": "JSON file contains some user data. Using it we will build a table that will display every user in separate row.",
     "label.about.whoDidIt": "Who did it?",
     "label.examples.menu": "Menu",
-    "label.hbs.text": "This example will show you how to use HandlebarsJS template system in our technology stack. Some of you may prefer working using them than Underscore templates."
+    "label.hbs.text": "This example will show you how to use HandlebarsJS template system in our technology stack. Some of you may prefer working using them than Underscore templates.",
+    "label.newLang.text": "Adding new language to hyperion is super easy. First of all you need to create an object (JSON via ajax or static JSON).",
+    "label.newLang.text2": "After that we will edit language html dropdown. There is already build in method that will pick a language code and automatically request for a new language file + translate whole page without reload. In our case dropdown looks like this:",
+    "label.newLang.text3": "Hyperion already have a method responsible for changing language build in. This is how it works:",
+    "label.newLang.text4": "Using following method you can add a language change event to any other element in your application."
 
 }
