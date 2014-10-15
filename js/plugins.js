@@ -38,7 +38,7 @@ define(['jquery', 'dateFormat', 'underscore'], function ($, DateFormat, _) {
 
     $.fn.extend({
         translate: function () {
-            var toTranslate = this.find('[data-translate]').not('.do-not-translate');
+            var toTranslate = this.find('[data-translate]');
             if (toTranslate.length === 0 && this.data('translate')) {
                 translateElement(this);
             } else {

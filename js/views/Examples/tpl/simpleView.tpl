@@ -49,23 +49,22 @@ function ($, Backbone, tpl) {
         </div>
         <div class="tab-pane" id="simpleView-tpl">
             <pre><code data-language="html">
-<!-- I added do-not-translate class just to avoid translation engine to translate this elements -->
-<div class="container">
-    <h1 class="do-not-translate" data-translate="label.menu.simpleView"></h1>
-    <h2 class="do-not-translate" data-translate="label.simpleView.howToCreateSimpleView"></h2>
-    <div class="clearfix">
-        <img src="images/simpleViewFolder.png" class="img-thumbnail pull-right" alt=""/>
-        <p class="do-not-translate" data-translate="label.simpleView.simpleView.text"></p>
-        <p class="do-not-translate" data-translate="label.simpleView.simpleView.text2"></p>
-        <p class="do-not-translate" data-translate="label.simpleView.simpleView.text3"></p>
-        <p>
-            <code>
+&lt;div class="container"&gt;
+    &lt;h1 data-translate="label.menu.simpleView"&gt;&lt;/h1&gt;
+    &lt;h2 data-translate="label.simpleView.howToCreateSimpleView"&gt;&lt;/h2&gt;
+    &lt;div class="clearfix"&gt;
+        &lt;img src="images/simpleViewFolder.png" class="img-thumbnail pull-right" alt=""/&gt;
+        &lt;p data-translate="label.simpleView.simpleView.text"&gt;&lt;/p&gt;
+        &lt;p data-translate="label.simpleView.simpleView.text2"&gt;&lt;/p&gt;
+        &lt;p data-translate="label.simpleView.simpleView.text3"&gt;&lt;/p&gt;
+        &lt;p&gt;
+            &lt;code&gt;
                 index.html#page/Examples/simpleView
-            </code>
-        </p>
-        <p class="do-not-translate" data-translate="label.simpleView.simpleView.text4"></p>
-    </div>
-</div>
+            &lt;/code&gt;
+        &lt;/p&gt;
+        &lt;p data-translate="label.simpleView.simpleView.text4"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
             </code></pre>
         </div>
 
