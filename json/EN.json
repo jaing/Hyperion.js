@@ -11,6 +11,7 @@
     "label.menu.simpleView": "Simple view",
     "label.menu.complexView": "Complex view",
     "label.menu.handlebars": "Handlebars templates",
+    "label.menu.todo": "TODO app example",
     "label.menu.jsonView": "JSON view",
     "label.menu.multipleComponents": "Multiple components",
     "label.toJson": "$.toJson sample",
