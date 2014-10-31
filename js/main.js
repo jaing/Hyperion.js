@@ -19,7 +19,9 @@ require.config({
         text: 'vendor/text',
         bootstrap: 'vendor/bootstrap',
         handlebars: 'vendor/handlebars-v2.0.0',
-        rainbow: 'vendor/rainbow'
+        rainbow: 'vendor/rainbow',
+        'backbone-forms': 'vendor/backbone-forms',
+        list: 'vendor/list'
     },
     shim: {
         'bootstrap': {
@@ -27,6 +29,9 @@ require.config({
         },
         'backbone': {
             'deps': ['underscore', 'jquery', 'text', 'bootstrap']
+        },
+        'list': {
+            'deps': ['jquery', 'underscore', 'backbone', 'backbone-forms']
         },
         'vendor/language/javascript': {
             'deps': ['vendor/language/generic']
