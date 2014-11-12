@@ -19,31 +19,21 @@ require.config({
         text: 'vendor/text',
         bootstrap: 'vendor/bootstrap',
         handlebars: 'vendor/handlebars-v2.0.0',
-        rainbow: 'vendor/rainbow',
-        'backbone-forms': 'vendor/backbone-forms',
-        list: 'vendor/list'
+        'handlebars-helpers': 'vendor/handlebars-helpers',
+        'backbone-forms': 'vendor/backbone-forms'
     },
     shim: {
         'bootstrap': {
-            'deps': ['jquery']
+            deps: ['jquery']
         },
         'backbone': {
-            'deps': ['underscore', 'jquery', 'text', 'bootstrap']
+            deps: ['underscore', 'jquery', 'text', 'bootstrap', 'handlebars', 'handlebars-helpers']
         },
-        'list': {
-            'deps': ['jquery', 'underscore', 'backbone', 'backbone-forms']
+        'handlebars': {
+            exports: 'Handlebars'
         },
-        'vendor/language/javascript': {
-            'deps': ['vendor/language/generic']
-        },
-        'vendor/language/html': {
-            'deps': ['vendor/language/generic']
-        },
-        'vendor/language/generic': {
-            'deps': ['rainbow']
-        },
-        'rainbow': {
-            'exports': 'Rainbow'
+        'handlebars-helpers': {
+            deps: ['handlebars']
         }
     }
 });

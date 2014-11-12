@@ -2,7 +2,6 @@
 @import "bootstrap";
 @import "animations";
 @import "font-awesome";
-@import "syntax";
 
 * {
     -webkit-box-sizing: border-box;
@@ -67,61 +66,4 @@
         -webkit-animation: rotateplane 1.2s infinite ease-in-out;
         animation: rotateplane 1.2s infinite ease-in-out;
     }
-}
-
-html, body {
-    min-height: 100%;
-}
-
-body {
-    padding: 0;
-    background: url("../images/bg.jpg") fixed;
-    background-size: cover;
-}
-
-#app-container {
-    padding-top: 45px;
-}
-
-#toJsonResultContainer {
-    position: fixed;
-    right: 10px;
-    top: 55px;
-}
-
-.container {
-    background: rgba(255, 255, 255, 0.98);
-    padding-bottom: 2em;
-}
-
-.container.v-s {
-    background: rgba(255, 255, 255, 0.9);
-}
-
-.list-group {
-    h4 {
-        font-weight: bold;
-    }
-}
-
-#examples-nav {
-    a {
-        display: block;
-        margin: 1em 0;
-        font-size: .9em;
-    }
-    ul {
-        padding-left: 1em;
-    }
-    .li-label {
-        font-weight: bold;
-        margin: 1em 0;
-    }
-}
-
-.github-ribbon {
-    position: fixed;
-    top: 45px;
-    right: 0;
-    border: 0;
 }

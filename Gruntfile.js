@@ -80,26 +80,22 @@ module.exports = function (grunt) {
                         backbone: 'vendor/backbone',
                         text: 'vendor/text',
                         bootstrap: 'vendor/bootstrap',
-                        rainbow: 'vendor/rainbow'
+                        handlebars: 'vendor/handlebars-v2.0.0',
+                        'handlebars-helpers': 'vendor/handlebars-helpers',
+                        'backbone-forms': 'vendor/backbone-forms'
                     },
                     shim: {
                         'bootstrap': {
-                            'deps': ['jquery']
+                            deps: ['jquery']
                         },
                         'backbone': {
-                            'deps': ['underscore', 'jquery', 'text', 'bootstrap']
+                            deps: ['underscore', 'jquery', 'text', 'bootstrap', 'handlebars', 'handlebars-helpers']
                         },
-                        'vendor/language/javascript': {
-                            'deps': ['vendor/language/generic']
+                        'handlebars': {
+                            exports: 'Handlebars'
                         },
-                        'vendor/language/html': {
-                            'deps': ['vendor/language/generic']
-                        },
-                        'vendor/language/generic': {
-                            'deps': ['rainbow']
-                        },
-                        'rainbow': {
-                            'exports': 'Rainbow'
+                        'handlebars-helpers': {
+                            deps: ['handlebars']
                         }
                     },
                     include: includes

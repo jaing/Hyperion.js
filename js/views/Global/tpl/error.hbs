@@ -4,12 +4,13 @@
         <h2>Move along... Move along...</h2>
     </div>
     <div class="alert fade in" role="alert">
-        {{ _.each(options.id.requireModules, function(item,key) { }}
-            <strong>Script Error:</strong> {{=item}}. Please make sure the VIEW file exist.
-        {{ }); }}
+        {{#each options.id.requireModules}}
+            {{log this}}
+            <strong>Script Error:</strong> {{this}}. Please make sure the VIEW file exist.
+        {{/each}}
         <p></p>
         <ul>
-            <li></li>
+
         </ul>
     </div>
     <div class="clearfix e-c">

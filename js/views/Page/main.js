@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'underscore', 'text!views/Page/tpl/index.tpl'], function ($, Backbone, _, tpl) {
+define(['jquery', 'backbone', 'underscore', 'handlebars', 'text!views/Page/tpl/index.hbs'], function ($, Backbone, _, Handlebars, tpl) {
     'use strict';
 
     return Backbone.View.extend({
@@ -11,8 +11,9 @@ define(['jquery', 'backbone', 'underscore', 'text!views/Page/tpl/index.tpl'], fu
             this.render(tpl);
         },
 
-        render: function (template) {
-            this.$el.html(_.template(template, this.getData())).translate();
+        render: function () {
+            var template = Handlebars.compile(tpl);
+            this.$el.html(template()).translate();
         },
 
         getData: function () {
