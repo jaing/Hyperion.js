@@ -1,19 +1,4 @@
 {
     "label.EN": "Angielski",
-    "label.PL": "Polski",
-    "label.menu.demo": "Przykłady",
-    "label.language.select": "Język",
-    "label.menu.home": "Strona główna",
-    "label.toJson": "Przykład z $.toJson",
-    "label.email": "Email",
-    "label.password": "Hasło",
-    "label.submit": "Wyślij",
-    "label.cancel": "Anuluj",
-    "label.legend": "Legenda",
-    "label.rememberMe": "Zapamiętaj",
-    "label.testTextArea": "Przykładowy textarea",
-    "label.radioButtons": "Radio",
-    "label.option1": "Opcja 1",
-    "label.option2": "Opcja 2",
-    "label.toJsonResult": "Wynik toJSON:"
+    "label.PL": "Polski"
 }
