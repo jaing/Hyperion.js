@@ -76,7 +76,7 @@ module.exports = function (grunt) {
                     fileExclusionRegExp: /^css/,
                     paths: {
                         jquery: 'vendor/jquery-2.1.1',
-                        underscore: 'vendor/underscore',
+                        underscore: 'vendor/lodash.underscore',
                         backbone: 'vendor/backbone',
                         text: 'vendor/text',
                         bootstrap: 'vendor/bootstrap',
